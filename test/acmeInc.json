@@ -1,0 +1,103 @@
+{
+  "company": {
+    "name": "ACME INC",
+    "address": "1st Street, Toontown, TT",
+    "founded": "December 31st 1969",
+    "hasStocks": true,
+    "numberOfEmployees": 2,
+    "numberOfActors": 3
+  },
+  "employees": [
+    {
+      "employeeNumber": 1,
+      "name": "Hugo Boss",
+      "age": 65,
+      "isCEO": true
+    },
+    {
+      "employeeNumber": 2,
+      "name": "Herbert Assistant",
+      "age": 32,
+      "isCEO": false
+    }
+  ],
+  "actors": [
+    {
+      "actorId": 1,
+      "name": "Bugs Bunny",
+      "retired": false,
+      "playedIn": [
+        {
+          "movie": "Who Framed Roger Rabbit",
+          "started": 1988
+        },
+        {
+          "movie": "Space Jam",
+          "started": 1996
+        },
+        {
+          "movie": "Looney Tunes: Back in Action",
+          "started": 2003
+        }
+      ]
+    },
+    {
+      "actorId": 2,
+      "name": "Pepé le Pew",
+      "retired": true,
+      "playedIn": [
+        {
+          "movie": "For Scent-imental Reasons",
+          "started": 1949
+        }
+      ]
+    },
+    {
+      "actorId": 3,
+      "name": "Marvin the Martian",
+      "retired": true,
+      "playedIn": [
+        {
+          "movie": "Marvin the Martian in the Third Dimension",
+          "started": 1996
+        },
+        {
+          "movie": "Duck Dodgers and the Return of the 24½th Century",
+          "started": 1980
+        },
+        {
+          "movie": "Hare-Way to the Stars",
+          "started": 1958
+        }
+      ]
+    },
+    {
+      "actorId": 4,
+      "name": "Yosemite Sam",
+      "retired": false,
+      "playedIn": [
+        {
+          "movie": "Who Framed Roger Rabbit",
+          "started": 1988
+        },
+        {
+          "movie": "Space Jam",
+          "started": 1996
+        },
+        {
+          "movie": "Looney Tunes: Back in Action",
+          "started": 2003
+        }
+      ]
+    }
+  ],
+  "distibutionChannels": [
+    "Celluloyd",
+    [
+      "VHS",
+      "Betamax",
+      "DVD",
+      "Blueray"
+    ]
+  ]
+}

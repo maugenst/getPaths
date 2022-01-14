@@ -1,0 +1,59 @@
+{
+  "name": "find-object-paths",
+  "version": "1.0.0",
+  "description": "Find paths in objects to given key('s), value('s) or key/value combinations",
+  "main": "dist/lib/GetObjectPaths.js",
+  "typings": "dist/lib/GetObjectPaths.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "npm run clean && tsc && npm run lint",
+    "build:dev": "tsc --watch -p ./tsconfig.json",
+    "clean": "rimraf dist/",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maugenst/find-object-paths.git"
+  },
+  "keywords": [
+    "objects",
+    "paths",
+    "key",
+    "value",
+    "combinations",
+    "lodash",
+    "mixin"
+  ],
+  "author": "Marius Augenstein",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/maugenst/find-object-paths/issues"
+  },
+  "homepage": "https://github.com/maugenst/find-object-paths#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^17.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "jest-extended": "^1.2.0",
+    "lodash": "^4.17.21",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  }
+}
