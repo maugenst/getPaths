@@ -91,13 +91,18 @@
       ]
     }
   ],
-  "distibutionChannels": [
+  "distributionChannels": [
     "Celluloyd",
     [
       "VHS",
       "Betamax",
       "DVD",
       "Blueray"
+    ],
+    [
+      "channel",
+      12,
+      true
     ]
   ]
 }

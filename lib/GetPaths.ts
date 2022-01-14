@@ -82,29 +82,17 @@ function findPaths(
             return;
         } else if (Array.isArray(data)) {
             for (let j = 0; j < data.length; j++) {
-                const resultTmp = find(data[j], searchKey, searchValue, `${pathToData}[${j}]`);
-                if (resultTmp) {
-                    return resultTmp;
-                }
+                find(data[j], searchKey, searchValue, `${pathToData}[${j}]`);
             }
             return;
         } else if (typeof data === 'object') {
             for (const k in data) {
                 if (data.hasOwnProperty(k)) {
-                    const resultTmp = find(
-                        data[k],
-                        searchKey,
-                        searchValue,
-                        `${pathToData ? pathToData + '.' : ''}${k}`
-                    );
-                    if (resultTmp) {
-                        return resultTmp;
-                    }
+                    find(data[k], searchKey, searchValue, `${pathToData ? pathToData + '.' : ''}${k}`);
                 }
             }
             return;
         }
-        throw new Error(`Unexpected input parameter?`);
     };
 
     find(obj, key, value, '');
