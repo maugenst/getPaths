@@ -1,9 +1,9 @@
 {
-  "name": "find-object-paths",
+  "name": "getPaths",
   "version": "1.0.0",
   "description": "Find paths in objects to given key('s), value('s) or key/value combinations",
-  "main": "dist/lib/GetObjectPaths.js",
-  "typings": "dist/lib/GetObjectPaths.d.ts",
+  "main": "dist/lib/GetPaths.js",
+  "typings": "dist/lib/GetPaths.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -17,9 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maugenst/find-object-paths.git"
+    "url": "git+https://github.com/maugenst/getPaths.git"
   },
   "keywords": [
+    "find",
+    "get",
     "objects",
     "paths",
     "key",
@@ -31,9 +33,9 @@
   "author": "Marius Augenstein",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/maugenst/find-object-paths/issues"
+    "url": "https://github.com/maugenst/getPaths/issues"
   },
-  "homepage": "https://github.com/maugenst/find-object-paths#readme",
+  "homepage": "https://github.com/maugenst/getPaths#readme",
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
