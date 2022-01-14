@@ -1,8 +1,7 @@
 [![NPM](https://nodei.co/npm/getPaths.png)](https://nodei.co/npm/getPaths/)
 
 [![CircleCI](https://circleci.com/gh/maugenst/getPaths.svg?style=shield)](https://circleci.com/gh/maugenst/getPaths)
-[![Coverage Status](https://coveralls.io/repos/github/maugenst/getPaths/badge.svg?branch=master)](https://coveralls.io/github/maugenst/getPaths?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/maugenst/getPaths/badge.svg?branch=main)](https://coveralls.io/github/maugenst/getPaths?branch=main)
 
 # getPaths
 
@@ -11,6 +10,7 @@ combinations. It is meant to interact nicely with lodash to quickly access or te
 but can be used standalone as well.
 
 ## Installation
+
 
 Install via npm
 
