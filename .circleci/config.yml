@@ -12,7 +12,7 @@ jobs:
       - run: npm run build
       - run: npm test
       - coveralls/upload:
-          flag_name: getPaths Testing Coverage
+          flag_name: findObjectPaths Testing Coverage
           verbose: true
 
 workflows:

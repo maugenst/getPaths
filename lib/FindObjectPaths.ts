@@ -3,7 +3,7 @@
  * @param obj <object | string | number | []> the object
  * @param {object} key string | value string | boolean | number
  */
-export function getPaths(
+export function findObjectPaths(
     obj: object | string | number | [],
     {key, value}: {key?: string; value?: string | boolean | number}
 ): string | string[] | void {
@@ -15,7 +15,7 @@ export function getPaths(
  * @param obj <object | string | number | []> the object
  * @param key <string> the key to search for
  */
-export function getPathsByKey(obj: object | string | number | [], key: string): string | string[] | void {
+export function findObjectPathsByKey(obj: object | string | number | [], key: string): string | string[] | void {
     return findPaths(obj, key);
 }
 
@@ -24,7 +24,7 @@ export function getPathsByKey(obj: object | string | number | [], key: string): 
  * @param obj <object | string | number | []> the object
  * @param value <string | boolean | number> the value to search for
  */
-export function getPathsByValue(
+export function findObjectPathsByValue(
     obj: object | string | number | [],
     value: string | boolean | number
 ): string | string[] | void {
@@ -37,7 +37,7 @@ export function getPathsByValue(
  * @param key <string> the key to search for
  * @param value <string | boolean | number> the value to search for
  */
-export function getPathsByKeyValue(
+export function findObjectPathsByKeyValue(
     obj: object | string | number | [],
     key?: string,
     value?: string | boolean | number

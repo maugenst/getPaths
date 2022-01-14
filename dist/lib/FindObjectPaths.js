@@ -1,22 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPathsByKeyValue = exports.getPathsByValue = exports.getPathsByKey = exports.getPaths = void 0;
-function getPaths(obj, { key, value }) {
+exports.findObjectPathsByKeyValue = exports.findObjectPathsByValue = exports.findObjectPathsByKey = exports.findObjectPaths = void 0;
+function findObjectPaths(obj, { key, value }) {
     return findPaths(obj, key, value);
 }
-exports.getPaths = getPaths;
-function getPathsByKey(obj, key) {
+exports.findObjectPaths = findObjectPaths;
+function findObjectPathsByKey(obj, key) {
     return findPaths(obj, key);
 }
-exports.getPathsByKey = getPathsByKey;
-function getPathsByValue(obj, value) {
+exports.findObjectPathsByKey = findObjectPathsByKey;
+function findObjectPathsByValue(obj, value) {
     return findPaths(obj, undefined, value);
 }
-exports.getPathsByValue = getPathsByValue;
-function getPathsByKeyValue(obj, key, value) {
+exports.findObjectPathsByValue = findObjectPathsByValue;
+function findObjectPathsByKeyValue(obj, key, value) {
     return findPaths(obj, key, value);
 }
-exports.getPathsByKeyValue = getPathsByKeyValue;
+exports.findObjectPathsByKeyValue = findObjectPathsByKeyValue;
 function findPaths(obj, key, value) {
     const results = [];
     const find = (data, searchKey, searchValue, pathToData) => {
@@ -63,4 +63,4 @@ function findPaths(obj, key, value) {
     }
     return;
 }
-//# sourceMappingURL=GetPaths.js.map
+//# sourceMappingURL=FindObjectPaths.js.map

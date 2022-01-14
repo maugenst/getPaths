@@ -1,5 +1,5 @@
 {
-  "name": "getPaths",
+  "name": "find-object-paths",
   "version": "1.0.0",
   "description": "Find paths in objects to given key('s), value('s) or key/value combinations",
   "main": "dist/lib/GetPaths.js",

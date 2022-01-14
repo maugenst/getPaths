@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
-interface GetPathsMixin extends _.LoDashStatic {
-    getPaths<T>(object: T, { key, value }: {
+interface FindObjectPathsMixin extends _.LoDashStatic {
+    findObjectPaths<T>(object: T, { key, value }: {
         key?: string;
         value?: string | boolean | number;
     }): string | string[] | void;
 }
-declare const _default: GetPathsMixin;
+declare const _default: FindObjectPathsMixin;
 export default _default;

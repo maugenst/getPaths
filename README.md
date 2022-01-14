@@ -1,9 +1,9 @@
-[![NPM](https://nodei.co/npm/getPaths.png)](https://nodei.co/npm/getPaths/)
+[![NPM](https://nodei.co/npm/findObjectPaths.png)](https://nodei.co/npm/findObjectPaths/)
 
 [![CircleCI](https://circleci.com/gh/maugenst/getPaths.svg?style=shield)](https://circleci.com/gh/maugenst/getPaths)
 [![Coverage Status](https://coveralls.io/repos/github/maugenst/getPaths/badge.svg?branch=main)](https://coveralls.io/github/maugenst/getPaths?branch=main)
 
-# getPaths
+# findObjectPaths
 
 Easy to use zero dependency get or find paths in objects to given key('s), value('s) or key/value 
 combinations. It is meant to interact nicely with lodash to quickly access or test values in objects, 
@@ -15,7 +15,7 @@ but can be used standalone as well.
 Install via npm
 
 ```
-npm install getPaths
+npm install findObjectPaths
 ```
 
 ## Example data (see test-folder)
@@ -38,12 +38,12 @@ acmeInc.json
   // see full content on github
 }
 ```
-https://github.com/maugenst/getPaths/blob/main/test/acmeInc.json
+https://github.com/maugenst/findObjectPaths/blob/main/test/acmeInc.json
 
 ## Basic usage
 
 ```ts
-import { getPaths } from 'getPaths';
+import { findObjectPaths } from 'findObjectPaths';
 
 class TestMe {
 
@@ -52,19 +52,19 @@ class TestMe {
         rawFileContent = fs.readFileSync(p.resolve(__dirname, 'acmeInc.json'), 'utf-8');
         acmeInc = JSON.parse(rawFileContent);
 
-        let path = getPaths(acmeInc, {key: 'founded'});
+        let path = findObjectPaths(acmeInc, {key: 'founded'});
         // company.founded
-        path = getPaths(acmeInc, {value: 'December 31st 1969'});
+        path = findObjectPaths(acmeInc, {value: 'December 31st 1969'});
         // company.founded
 
-        const allPaths: string[] = getPaths(acmeInc, {key: 'actorId'}) as string[];
+        const allPaths: string[] = findObjectPaths(acmeInc, {key: 'actorId'}) as string[];
         /* [ 'actors[0].actorId',
              'actors[1].actorId',
              'actors[2].actorId',
              'actors[3].actorId' ]
          */
 
-        const ceoPath = getPaths(acmeInc, {key: 'isCEO', value: true});
+        const ceoPath = findObjectPaths(acmeInc, {key: 'isCEO', value: true});
          // employees[0].isCEO
     }
 }
@@ -72,29 +72,29 @@ class TestMe {
 TestMe.main();
 ```
 
-See more examples implemented in [tests-getPaths](https://github.com/maugenst/getPaths/blob/main/test/tests-getPaths.ts).
+See more examples implemented in [tests-findObjectPaths](https://github.com/maugenst/getPaths/blob/main/test/tests-findObjectPaths.ts).
 
 ## Convenient Methods
 
-+ **getPathsByKey** Find a single or all path(s) matching to a key in an object
-+ **getPathsByValue** Find a single or all path(s) to a value in an object.
-+ **getPathsByKeyValue** Find a or all path(s) to a key with a given value in an object
++ **findObjectPathsByKey** Find a single or all path(s) matching to a key in an object
++ **findObjectPathsByValue** Find a single or all path(s) to a value in an object.
++ **findObjectPathsByKeyValue** Find a or all path(s) to a key with a given value in an object
 
 ## Lodash Mixin
-getPaths can be used as a lodash mixin.
+findObjectPaths can be used as a lodash mixin.
 ```ts
-import _ from '../lib/GetPathsMixin';
+import _ from '../lib/FindObjectPathsMixin';
 .
 .
 .
-const path = _.getPaths(acmeInc, {key: 'numberOfActors'});
+const path = _.findObjectPaths(acmeInc, {key: 'numberOfActors'});
 // company.numberOfActors
 
-path = _.getPaths(acmeInc, {value: 'DVD'});
+path = _.findObjectPaths(acmeInc, {value: 'DVD'});
 // distributionChannels[1][2]
 
-if (_.has(acmeInc, _.getPaths(acmeInc, {value: 'DVD'}))) {
-    const dvd = _.get(acmeInc, _.getPaths(acmeInc, {value: 'DVD'}));
+if (_.has(acmeInc, _.findObjectPaths(acmeInc, {value: 'DVD'}))) {
+    const dvd = _.get(acmeInc, _.findObjectPaths(acmeInc, {value: 'DVD'}));
     // do something
 }
 ```
