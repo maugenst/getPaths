@@ -31,14 +31,11 @@ acmeInc.json
     "hasStocks": true,
     "numberOfEmployees": 2,
     "numberOfActors": 3
-  },
-  .
-  .
-  .
+  }
   // see full content on github
 }
 ```
-https://github.com/maugenst/findObjectPaths/blob/main/test/acmeInc.json
+[Full Source of acmeInc](https://github.com/maugenst/getPaths/blob/main/test/acmeInc.json)
 
 ## Basic usage
 

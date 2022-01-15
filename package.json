@@ -1,9 +1,9 @@
 {
   "name": "find-object-paths",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find paths in objects to given key('s), value('s) or key/value combinations",
-  "main": "dist/lib/GetPaths.js",
-  "typings": "dist/lib/GetPaths.d.ts",
+  "main": "dist/lib/FindObjectPaths.js",
+  "typings": "dist/lib/FindObjectPaths.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
