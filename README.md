@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/maugenst/getPaths.svg?style=shield)](https://circleci.com/gh/maugenst/getPaths)
 [![Coverage Status](https://coveralls.io/repos/github/maugenst/getPaths/badge.svg?branch=main)](https://coveralls.io/github/maugenst/getPaths?branch=main)
 
-# findObjectPaths
+# find-object-paths
 
 Easy to use zero dependency get or find paths in objects to given key('s), value('s) or key/value 
 combinations. It is meant to interact nicely with lodash to quickly access or test values in objects, 
@@ -15,7 +15,7 @@ but can be used standalone as well.
 Install via npm
 
 ```
-npm install findObjectPaths
+npm install find-object-paths
 ```
 
 ## Example data (see test-folder)
@@ -40,7 +40,7 @@ acmeInc.json
 ## Basic usage
 
 ```ts
-import { findObjectPaths } from 'findObjectPaths';
+import { findObjectPaths } from 'find-object-paths';
 
 class TestMe {
 
