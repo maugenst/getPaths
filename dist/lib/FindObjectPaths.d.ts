@@ -1,7 +1,11 @@
-export declare function findObjectPaths(obj: object | string | number | [], { key, value }: {
+export declare type KeyValue = {
     key?: string;
-    value?: string | boolean | number;
-}): string | string[] | void;
-export declare function findObjectPathsByKey(obj: object | string | number | [], key: string): string | string[] | void;
-export declare function findObjectPathsByValue(obj: object | string | number | [], value: string | boolean | number): string | string[] | void;
-export declare function findObjectPathsByKeyValue(obj: object | string | number | [], key?: string, value?: string | boolean | number): string | string[] | void;
+    value?: Value;
+};
+export declare type Value = string | boolean | number;
+export declare type Searchable = object | string | [];
+export declare function has(obj: Searchable, key: KeyValue | string, value?: Value): boolean;
+export declare function findObjectPaths(obj: Searchable, { key, value }: KeyValue): string | string[] | void;
+export declare function findObjectPathsByKey(obj: Searchable, key: string): string | string[] | void;
+export declare function findObjectPathsByValue(obj: Searchable, value: Value): string | string[] | void;
+export declare function findObjectPathsByKeyValue(obj: Searchable, key?: string, value?: Value): string | string[] | void;

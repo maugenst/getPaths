@@ -3,6 +3,7 @@ import 'jest-extended';
 import * as fs from 'fs';
 import * as p from 'path';
 import {
+    has,
     findObjectPaths,
     findObjectPathsByKey,
     findObjectPathsByKeyValue,
@@ -11,12 +12,25 @@ import {
 import _ from '../lib/FindObjectPathsMixin';
 
 describe('Find-Object-Paths Tests', function () {
-    let acmeInc = {};
+    let acmeInc: any = {};
     let rawFileContent: string;
 
     beforeAll(() => {
         rawFileContent = fs.readFileSync(p.resolve(__dirname, 'acmeInc.json'), 'utf-8');
         acmeInc = JSON.parse(rawFileContent);
+    });
+
+    test('findObjectPaths: has', async () => {
+        expect(has(acmeInc.employees, {key: 'name'})).toBeTruthy();
+        expect(has(acmeInc.employees, {key: 'foo'})).toBeFalsy();
+        expect(has(acmeInc.employees, {key: 'name', value: 'Hugo Boss'})).toBeTruthy();
+        expect(has(acmeInc.employees, {value: 'Hugo Boss'})).toBeTruthy();
+        expect(has(acmeInc.employees, {value: 'William Shakespeare'})).toBeFalsy();
+        expect(has(acmeInc.employees, 'name')).toBeTruthy();
+        expect(has(acmeInc.employees, 'foo')).toBeFalsy();
+        expect(has(acmeInc.employees, 'name', 'Hugo Boss')).toBeTruthy();
+        expect(has(acmeInc.employees, 'name', 'William Shakespeare')).toBeFalsy();
+        expect(has(acmeInc.employees, 'foo', 'bar')).toBeFalsy();
     });
 
     test('findObjectPaths: empty object should return undefined', async () => {

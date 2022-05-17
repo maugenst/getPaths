@@ -1,67 +1,76 @@
+export type KeyValue = {
+    key?: string;
+    value?: Value;
+};
+
+export type Value = string | boolean | number;
+
+export type Searchable = object | string | [];
+
+/**
+ * Check if an object has a particular key / value combination
+ * @param obj <Searchable> the object or array
+ * @param {string | <KeyValue>} key Key can be either an object or a string
+ * @param {Value} value the value (optional)
+ */
+export function has(obj: Searchable, key: KeyValue | string, value?: Value): boolean {
+    if (typeof key === 'string') {
+        return findPaths(obj, key, value) !== undefined;
+    } else {
+        return findPaths(obj, key.key, key.value) !== undefined;
+    }
+}
+
 /**
  * Find a single or all path(s) matching to a key or a value passed in an object
- * @param obj <object | string | number | []> the object
- * @param {object} key string | value string | boolean | number
+ * @param obj <Searchable> the object
+ * @param {object} <KeyValue> key string | value Value
  */
-export function findObjectPaths(
-    obj: object | string | number | [],
-    {key, value}: {key?: string; value?: string | boolean | number}
-): string | string[] | void {
+export function findObjectPaths(obj: Searchable, {key, value}: KeyValue): string | string[] | void {
     return findPaths(obj, key, value);
 }
 
 /**
  * Find a single or all path(s) matching to a key in an object
- * @param obj <object | string | number | []> the object
+ * @param obj <Searchable> the object
  * @param key <string> the key to search for
  */
-export function findObjectPathsByKey(obj: object | string | number | [], key: string): string | string[] | void {
+export function findObjectPathsByKey(obj: Searchable, key: string): string | string[] | void {
     return findPaths(obj, key);
 }
 
 /**
  * Find a single or all path(s) to a value in an object
- * @param obj <object | string | number | []> the object
- * @param value <string | boolean | number> the value to search for
+ * @param obj <Searchable> the object
+ * @param value <Value> the value to search for
  */
-export function findObjectPathsByValue(
-    obj: object | string | number | [],
-    value: string | boolean | number
-): string | string[] | void {
+export function findObjectPathsByValue(obj: Searchable, value: Value): string | string[] | void {
     return findPaths(obj, undefined, value);
 }
 
 /**
  * Find a or all path(s) to a key with a given value in an object
- * @param obj <object | string | number | []> the object
+ * @param obj <Searchable> the object
  * @param key <string> the key to search for
- * @param value <string | boolean | number> the value to search for
+ * @param value <Value> the value to search for
  */
-export function findObjectPathsByKeyValue(
-    obj: object | string | number | [],
-    key?: string,
-    value?: string | boolean | number
-): string | string[] | void {
+export function findObjectPathsByKeyValue(obj: Searchable, key?: string, value?: Value): string | string[] | void {
     return findPaths(obj, key, value);
 }
 
 /**
  * Find a or all path(s) to a key with a given value in an object
- * @param obj <object | string | number | []> the object
+ * @param obj <Searchable> the object
  * @param key <string> the key to search for
- * @param value <string | boolean | number> the value to search for
+ * @param value <Value> the value to search for
  */
-function findPaths(
-    obj: object | string | number | [],
-    key?: string,
-    value?: string | boolean | number
-): string | string[] | void {
+function findPaths(obj: Searchable, key?: string, value?: Value): string | string[] | void {
     const results: string[] = [];
 
     const find = (
         data: any,
         searchKey: string | undefined,
-        searchValue: string | boolean | number | undefined,
+        searchValue: Value | undefined,
         pathToData: string
     ): string | void => {
         if (typeof data === 'string' || typeof data === 'boolean' || typeof data === 'number') {

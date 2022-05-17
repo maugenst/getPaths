@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/findObjectPaths.png)](https://nodei.co/npm/findObjectPaths/)
+[![NPM](https://nodei.co/npm/find-object-paths.png)](https://nodei.co/npm/find-object-paths/)
 
 [![CircleCI](https://circleci.com/gh/maugenst/getPaths.svg?style=shield)](https://circleci.com/gh/maugenst/getPaths)
 [![Coverage Status](https://coveralls.io/repos/github/maugenst/getPaths/badge.svg?branch=main)](https://coveralls.io/github/maugenst/getPaths?branch=main)
@@ -8,6 +8,8 @@
 Easy to use zero dependency get or find paths in objects to given key('s), value('s) or key/value 
 combinations. It is meant to interact nicely with lodash to quickly access or test values in objects, 
 but can be used standalone as well.
+
+Despite other projects you also can specify values to be searched for.
 
 ## Installation
 
@@ -40,7 +42,7 @@ acmeInc.json
 ## Basic usage
 
 ```ts
-import { findObjectPaths } from 'find-object-paths';
+import { has, findObjectPaths } from 'find-object-paths';
 
 class TestMe {
 
@@ -63,6 +65,13 @@ class TestMe {
 
         const ceoPath = findObjectPaths(acmeInc, {key: 'isCEO', value: true});
          // employees[0].isCEO
+
+        has(acmeInc, 'name', 'Hugo Boss');
+        // true
+
+        has(acmeInc, {value: 'Hugo Boss'});
+        // true
+
     }
 }
 
@@ -72,7 +81,7 @@ TestMe.main();
 See more examples implemented in [tests-findObjectPaths](https://github.com/maugenst/getPaths/blob/main/test/tests-findObjectPaths.ts).
 
 ## Convenient Methods
-
++ **has** Checks if a key / value combination is available in an object
 + **findObjectPathsByKey** Find a single or all path(s) matching to a key in an object
 + **findObjectPathsByValue** Find a single or all path(s) to a value in an object.
 + **findObjectPathsByKeyValue** Find a or all path(s) to a key with a given value in an object
@@ -99,3 +108,7 @@ if (_.has(acmeInc, _.findObjectPaths(acmeInc, {value: 'DVD'}))) {
 ### Tests
 
 Tests can be found in `/test` and run by jest. To run the tests call ``npm test``.
+
+### Changes
+
++ added `has` function to check availability of keys / values in objects or arrays

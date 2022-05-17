@@ -12,6 +12,18 @@ describe('Find-Object-Paths Tests', function () {
         rawFileContent = fs.readFileSync(p.resolve(__dirname, 'acmeInc.json'), 'utf-8');
         acmeInc = JSON.parse(rawFileContent);
     });
+    test('findObjectPaths: has', async () => {
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, { key: 'name' })).toBeTruthy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, { key: 'foo' })).toBeFalsy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, { key: 'name', value: 'Hugo Boss' })).toBeTruthy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, { value: 'Hugo Boss' })).toBeTruthy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, { value: 'William Shakespeare' })).toBeFalsy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, 'name')).toBeTruthy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, 'foo')).toBeFalsy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, 'name', 'Hugo Boss')).toBeTruthy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, 'name', 'William Shakespeare')).toBeFalsy();
+        expect((0, FindObjectPaths_1.has)(acmeInc.employees, 'foo', 'bar')).toBeFalsy();
+    });
     test('findObjectPaths: empty object should return undefined', async () => {
         const path = (0, FindObjectPaths_1.findObjectPaths)({}, { key: 'test' });
         expect(path).toBeUndefined();

@@ -1,6 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findObjectPathsByKeyValue = exports.findObjectPathsByValue = exports.findObjectPathsByKey = exports.findObjectPaths = void 0;
+exports.findObjectPathsByKeyValue = exports.findObjectPathsByValue = exports.findObjectPathsByKey = exports.findObjectPaths = exports.has = void 0;
+function has(obj, key, value) {
+    if (typeof key === 'string') {
+        return findPaths(obj, key, value) !== undefined;
+    }
+    else {
+        return findPaths(obj, key.key, key.value) !== undefined;
+    }
+}
+exports.has = has;
 function findObjectPaths(obj, { key, value }) {
     return findPaths(obj, key, value);
 }
