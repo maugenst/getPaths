@@ -71,7 +71,7 @@ function findPaths(obj: Searchable, key?: string, value?: Value): string | strin
         data: any,
         searchKey: string | undefined,
         searchValue: Value | undefined,
-        pathToData: string
+        pathToData: string,
     ): string | void => {
         if (typeof data === 'string' || typeof data === 'boolean' || typeof data === 'number') {
             const keyTmp = pathToData.split('.').pop();
