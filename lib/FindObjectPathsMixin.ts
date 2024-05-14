@@ -1,5 +1,5 @@
 import {findObjectPaths} from './FindObjectPaths';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
 interface FindObjectPathsMixin extends _.LoDashStatic {
     findObjectPaths<T>(
